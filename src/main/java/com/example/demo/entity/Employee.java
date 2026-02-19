@@ -11,14 +11,14 @@ import jakarta.persistence.ManyToOne;
 public class Employee {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private long empno;
+	private Long empno;
 	private String name;
 	
 	@ManyToOne
 	@JoinColumn(name="deptno")
 	private Department dept;
 
-	public Employee(long empno, String name, Department dept) {
+	public Employee(Long empno, String name, Department dept) {
 		super();
 		this.empno = empno;
 		this.name = name;
@@ -26,11 +26,11 @@ public class Employee {
 	}
 	
 	public Employee() {}
-	public long getEmpno() {
+	public Long getEmpno() {
 		return empno;
 	}
 
-	public void setEmpno(long empno) {
+	public void setEmpno(Long empno) {
 		this.empno = empno;
 	}
 

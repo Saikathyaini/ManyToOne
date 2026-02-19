@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,26 +14,25 @@ public class Department {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long deptno;
+	private Long deptno;
 	private String deptname;
 	
 	@OneToMany
 	@JoinColumn(name="empno")
-	private Employee emp;
+	private List<Employee> emp;
 
-	public Department(long deptno, String deptname, Employee emp) {
+	public Department(Long deptno, String deptname, List<Employee> emp) {
 		super();
 		this.deptno = deptno;
 		this.deptname = deptname;
 		this.emp = emp;
 	}
-	
-	public Department() {}
-	public long getDeptno() {
+
+	public Long getDeptno() {
 		return deptno;
 	}
 
-	public void setDeptno(long deptno) {
+	public void setDeptno(Long deptno) {
 		this.deptno = deptno;
 	}
 
@@ -43,14 +44,13 @@ public class Department {
 		this.deptname = deptname;
 	}
 
-	public Employee getEmp() {
+	public List<Employee> getEmp() {
 		return emp;
 	}
 
-	public void setEmp(Employee emp) {
+	public void setEmp(List<Employee> emp) {
 		this.emp = emp;
 	}
-	
-	
 
+	
 }
