@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,9 +18,12 @@ public class Department {
 	private Long deptno;
 	private String deptname;
 	
-	@OneToMany
-	@JoinColumn(name="empno")
-	private List<Employee> emp;
+	  @OneToMany
+	  @JoinColumn(name="deptno")
+	  private List<Employee> emp;
+	  public Department() {
+		  
+	  }
 
 	public Department(Long deptno, String deptname, List<Employee> emp) {
 		super();

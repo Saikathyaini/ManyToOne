@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Department;
+import com.example.demo.entity.Employee;
 import com.example.demo.repository.DeptRepository;
 
 @Service
@@ -26,6 +27,9 @@ public class DeptService {
 		
 	}
 	
+	public List<Department> getdept(){
+		return repo.findAll();
+	}
 	
 
 }

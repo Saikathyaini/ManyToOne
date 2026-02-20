@@ -13,16 +13,13 @@ public class Employee {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long empno;
 	private String name;
-	
-	@ManyToOne
-	@JoinColumn(name="deptno")
-	private Department dept;
+	private Long deptno;
+    
 
-	public Employee(Long empno, String name, Department dept) {
-		super();
+	public Employee(Long empno, String name,Long deptno) {
 		this.empno = empno;
 		this.name = name;
-		this.dept = dept;
+		this.deptno=deptno;
 	}
 	
 	public Employee() {}
@@ -42,13 +39,14 @@ public class Employee {
 		this.name = name;
 	}
 
-	public Department getDept() {
-		return dept;
+	public long getDeptno() {
+		return deptno;
 	}
 
-	public void setDept(Department dept) {
-		this.dept = dept;
+	public void setDeptno(long deptno) {
+		this.deptno = deptno;
 	}
+
 	
 	
 }
